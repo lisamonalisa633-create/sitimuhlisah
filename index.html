@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nama Anda – Portofolio</title>
+<meta name="description" content="Portofolio Nama Anda: desainer dan pengembang web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8eef3; --surface:#f7fafc; --ink:#10243a; --muted:#53677b;
+  --line:#c3d0db; --accent:#2f5bff; --accent-ink:#ffffff; --mint:#bfe9d6;
+  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --body:"Instrument Sans","Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1b2a; --surface:#16273b; --ink:#e6eef6; --muted:#9fb2c5;
+    --line:#2a3f57; --accent:#7f9bff; --accent-ink:#0f1b2a; --mint:#1f4a3d}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:700 1.15rem var(--display);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink)}
+
+/* Hero */
+.hero{padding:56px 0 72px}
+.hero h1{font:800 clamp(2.8rem,9vw,6.5rem)/0.98 var(--display);letter-spacing:-0.035em;max-width:14ch}
+.hero p.lead{margin-top:28px;max-width:52ch;font-size:1.2rem;color:var(--muted)}
+.hero .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.8rem,4vw,2.5rem)/1.1 var(--display);letter-spacing:-0.02em;margin-bottom:12px}
+.sub{color:var(--muted);max-width:56ch;margin-bottom:40px}
+
+/* Proyek */
+.projects{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface);border-radius:20px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.thumb{height:190px;position:relative;overflow:hidden}
+.thumb.a{background:var(--accent)}
+.thumb.b{background:var(--mint)}
+.thumb.c{background:var(--ink)}
+.thumb i{position:absolute;display:block}
+.thumb.a i:nth-child(1){width:120px;height:120px;border-radius:50%;background:var(--bg);left:28px;top:34px}
+.thumb.a i:nth-child(2){width:150px;height:24px;border-radius:12px;background:var(--accent-ink);right:24px;bottom:36px;opacity:.85}
+.thumb.b i:nth-child(1){width:70%;height:18px;background:var(--ink);left:24px;top:36px;border-radius:9px}
+.thumb.b i:nth-child(2){width:45%;height:90px;background:var(--surface);left:24px;bottom:24px;border-radius:12px}
+.thumb.c i:nth-child(1){width:90px;height:90px;border:10px solid var(--accent);border-radius:20px;right:30px;top:30px;transform:rotate(12deg)}
+.thumb.c i:nth-child(2){width:55%;height:14px;background:var(--bg);opacity:.7;left:24px;bottom:34px;border-radius:7px}
+.card .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font:700 1.3rem var(--display)}
+.card p{color:var(--muted);font-size:1rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.tags span{font-size:.85rem;padding:3px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.card a.more{font-weight:600;text-decoration:underline;text-underline-offset:4px}
+
+/* Tentang */
+.about{display:grid;gap:48px;grid-template-columns:1.2fr 1fr}
+.about p+p{margin-top:16px}
+.skills{list-style:none;padding:0;display:grid;gap:0}
+.skills li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.skills li span:last-child{color:var(--muted);text-align:right}
+
+/* Kontak */
+.contact{text-align:left}
+.contact .mail{display:inline-block;font:800 clamp(1.5rem,5vw,3rem)/1.1 var(--display);letter-spacing:-0.02em;margin:8px 0 28px;word-break:break-all}
+.social{display:flex;gap:22px;flex-wrap:wrap;list-style:none;padding:0}
+footer{padding:30px 0 50px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  .about{grid-template-columns:1fr;gap:32px}
+  nav ul{gap:14px}
+  .hero{padding-top:30px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#atas">Nama Anda</a>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="atas">
+    <div class="hero">
+      <h1>Saya membangun situs web yang jelas dan cepat.</h1>
+      <p class="lead">Halo, saya Nama Anda, desainer dan pengembang web di Makassar. Saya membantu bisnis kecil dan komunitas tampil rapi di internet.</p>
+      <div class="cta">
+        <a class="btn primary" href="#proyek">Lihat proyek</a>
+        <a class="btn" href="#kontak">Hubungi saya</a>
+      </div>
+    </div>
+
+    <section id="proyek">
+      <h2>Proyek pilihan</h2>
+      <p class="sub">Tiga pekerjaan terbaru. Ganti isinya dengan proyek Anda sendiri.</p>
+      <div class="projects">
+        <article class="card">
+          <div class="thumb a" aria-hidden="true"><i></i><i></i></div>
+          <div class="body">
+            <h3>Toko Online Kopi Lokal</h3>
+            <p>Situs toko dengan katalog, keranjang, dan pembayaran transfer. Waktu muat turun dari 6 detik menjadi 1,5 detik.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="more" href="#">Lihat proyek</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb b" aria-hidden="true"><i></i><i></i></div>
+          <div class="body">
+            <h3>Aplikasi Jadwal Kelas</h3>
+            <p>Aplikasi web untuk guru mengatur jadwal dan mengirim pengingat ke orang tua murid.</p>
+            <div class="tags"><span>React</span><span>Firebase</span></div>
+            <a class="more" href="#">Lihat proyek</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb c" aria-hidden="true"><i></i><i></i></div>
+          <div class="body">
+            <h3>Identitas Visual Kedai Seafood</h3>
+            <p>Logo, menu cetak, dan halaman web satu layar untuk kedai di tepi pantai.</p>
+            <div class="tags"><span>Logo</span><span>Branding</span><span>Figma</span></div>
+            <a class="more" href="#">Lihat proyek</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tentang">
+      <div class="about">
+        <div>
+          <h2>Tentang saya</h2>
+          <p>Saya punya pengalaman 4 tahun membuat situs web, dari halaman profil sederhana sampai aplikasi dengan basis data. Saya suka tata letak yang bersih, teks yang mudah dibaca, dan halaman yang tetap nyaman dibuka di ponsel dengan sinyal lemah.</p>
+          <p>Di luar pekerjaan, saya belajar fotografi dan sesekali mengajar coding untuk pelajar SMA.</p>
+        </div>
+        <ul class="skills" aria-label="Keahlian">
+          <li><span>Desain antarmuka</span><span>Figma, prototipe</span></li>
+          <li><span>Pengembangan front-end</span><span>HTML, CSS, JavaScript, React</span></li>
+          <li><span>Back-end ringan</span><span>Node.js, Firebase</span></li>
+          <li><span>Performa dan SEO</span><span>Lighthouse, aksesibilitas</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kontak" class="contact">
+      <h2>Punya proyek? Mari bicara.</h2>
+      <p class="sub">Saya biasanya membalas dalam satu hari kerja.</p>
+      <a class="mail" href="mailto:email@contoh.com">email@contoh.com</a>
+      <ul class="social">
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>© <span id="tahun">2026</span> Nama Anda. Semua hak dilindungi.</footer>
+</div>
+<script>document.getElementById('tahun').textContent=new Date().getFullYear();</script>
+</body>
+</html>
